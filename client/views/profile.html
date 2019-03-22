@@ -1,0 +1,56 @@
+<template name="profile">
+  <div class="container">
+    <div class="text-center">
+      <h1>This is the user profile.</h1>
+      <p>
+        Landing here means you're going to edit your profile.
+        {{#with currentUser}}
+    		{{#with profile}}
+       			{{firstName}}
+    		{{/with}}
+		{{/with}}
+			</p>
+		{{> UserProfileEdit }}
+		<h3>My Teams</h3>
+		<table class="table table-bordered table-hover table-condensed">
+		  <thead>
+		    <tr>
+		      <td style="width: 85px">Name</td>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    {{#each teams}}
+		      <tr>
+		        <td>{{this.name}}</td>
+		      </tr>
+		    {{/each}}
+		  </tbody>
+		</table>
+
+
+
+
+    </div>
+  </div>
+</template>
+
+<template name="UserProfileEdit">
+		{{> quickForm
+			collection="Meteor.users"
+			doc=currentUser
+			id="updateUserForm"
+			fields="profile, emails.0.address"
+			type="update"}}
+	<!-- {{#autoForm id="UserProfileEdit" collection="Meteor.users"  doc=currentUser type="update"}}
+					{{> afQuickField name="username"}}
+					{{> afQuickField name="profile.firstName"}}
+					{{> afQuickField name="profile.lastName"}}
+					{{> afQuickField name="profile.bio" rows="6"}}
+					{{> afQuickField name="profile.website"}}
+					{{#unless autoSaveMode}}
+					<div class="form-group">
+									<button type="submit" class="btn btn-primary" disabled="{{disableButtons}}">Submit</button>
+					</div>
+					{{/unless}}
+	{{/autoForm}} -->
+</template>

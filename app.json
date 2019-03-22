@@ -1,0 +1,7 @@
+{
+    "name": "meteorapp-keela",
+    "description": "An assignment from Keela. Using MeteorJS, Blaze, and MongoDB",
+    "repository": "https://github.com/tekm/meteorapp-keela",
+    "logo": "https://meteorapp-keela.herokuapp.com/",
+    "keywords": ["meteor", "npm", "mongodb"]
+  }

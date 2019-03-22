@@ -1,0 +1,24 @@
+<template name="team">
+    <div class="container">   
+        <div class="text-center">
+        <h1>This is the Team Page</h1>
+        <p>
+            Landing here means that you're going to view teams.
+        </p>
+                
+        <div>
+            <div data-toggle="collapse" class="btn btn-info" data-target="#accordion">
+                New Team
+            </div>
+            <div>
+                <div id="accordion" class="collapse">{{> createNewTeam}}</div>
+            </div>
+        </div>
+        {{> listTeams}}
+        </div>
+    </div>
+</template>
+
+<template name="createNewTeam">
+    {{> quickForm collection="Teams" id="insertTeamForm" fields="name" type="insert"}}
+</template>

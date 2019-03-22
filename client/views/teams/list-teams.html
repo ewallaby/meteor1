@@ -1,0 +1,32 @@
+<template name="listTeams">
+        <div class="container">
+          <div class="text-center">
+            <h1>View All Teams({{teamsCount}}).</h1>
+      
+              <table class="table table-bordered table-condensed">
+                <thead>
+                  <tr>
+                    <td>Name</td>
+                    <td>Created</td>
+                    <td style="width: 250px">Edit</td>
+                    <td style="width: 250px">View</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each teams}}
+                    <tr>
+                      <td>{{this.name}}</td>
+                      <td>{{this.createdAt}}</td>
+                      <td>
+                      {{#autoForm id=this._id type="update" collection="Teams" doc=this autosave=true}}
+                        {{> afFormGroup name="name" label=false}}
+                      {{/autoForm}}
+                      </td>
+                      <td><a href="{{pathFor '/team/:_id' _id=_id}}">View</a></td>
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </template>

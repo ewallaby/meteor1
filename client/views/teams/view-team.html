@@ -1,0 +1,50 @@
+<template name="viewTeam">
+        <div class="container">
+          <div class="text-center">
+            {{#each team}}
+            <h1>View Team</h1>
+      
+              <table class="table table-bordered table-condensed">
+                
+                <tbody>
+                    <tr>
+                      <td>Name</td>
+                      <td>{{name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Created</td>
+                        <td>{{createdAt}}</td>
+                    </tr>
+                    <tr>
+                        <td>Last Updated</td>
+                        {{#if updatedAt}}
+                        <td>{{updatedAt}}</td>
+                        {{else}}
+                        <td>{{createdAt}}</td>
+                        {{/if}}
+                    </tr>
+                </tbody>
+              </table>
+              
+              <div>
+                  <div data-toggle="collapse" class="btn btn-info" data-target="#new-member-accordion">
+                      New Member
+                  </div>
+                  <div>
+                      <div id="new-member-accordion" class="collapse">{{> searchBox}}</div>
+                  </div>
+              </div>
+                <h3>Members</h3>
+                  
+                    <ol class="list-group">
+                      {{#each members}}
+                        <li class="list-group-item">
+                          <span>{{name}}</span>
+                          <span class="btn btn-primary badge badge-pill btn-remove-member">X</span>
+                        </li>
+                      {{/each}}
+                      </ol>
+              {{/each}}
+          </div>
+        </div>
+      </template>

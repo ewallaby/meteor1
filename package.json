@@ -1,0 +1,35 @@
+{
+  "name": "meteorapp-keela",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "0.10.20",
+    "npm": "6.9.0",
+    "yarn": "1.13.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "echo \"Started\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.4.2",
+    "bcrypt": "^3.0.5",
+    "meteor-node-stubs": "^0.4.1",
+    "moment": "^2.24.0",
+    "mongodb": "^3.2.1",
+    "simpl-schema": "^1.5.5",
+    "sweetalert": "^2.1.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tekm/meteorapp-keela.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/tekm/meteorapp-keela/#readme"
+}

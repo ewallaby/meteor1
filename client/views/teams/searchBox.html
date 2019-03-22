@@ -1,0 +1,16 @@
+<template name="searchBox">
+    {{> EasySearch.Input index=usersIndex }}
+
+    <ul class="list-group">
+        {{#EasySearch.Each index=usersIndex }}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{#if profile}}
+                <span>{{profile.firstName}}</span>
+                {{else}}
+                <span>{{__originalId}}</span>
+                {{/if}}
+            <span class="btn btn-primary badge badge-pill btn-add-member">Add</span>
+        </li>
+        {{/EasySearch.Each}}
+    </ul>
+</template>
